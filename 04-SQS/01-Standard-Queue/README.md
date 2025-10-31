@@ -1,4 +1,4 @@
-# Aula 04.1 - Standart Queue
+# Aula 04.1 - Standard Queue
 
 **Antes de começar, execute os passos abaixo para configurar o ambiente caso não tenha feito isso ainda na aula de HOJE: [Preparando Credenciais](../../01-create-codespaces/Inicio-de-aula.md)**
 
@@ -14,13 +14,13 @@
 
 ### Enviando dados para a fila
 
-1. No terminal do CLoud 9 IDE criado no codespaces execute o comando `cd /workspaces/FIAP-Microservices-Serverless/04-SQS/01-Standard-Queue/` para entrar na pasta que fara este exercicio.
+1. No terminal do Codespaces execute o comando `cd /workspaces/FIAP-Microservices-Serverless/04-SQS/01-Standard-Queue/` para entrar na pasta que fara este exercicio.
 2. Abra o arquivo put.py com o comando `code put.py`
 3. Altere o arquivo put.py adicionando a URL da fila do sqs que criou nos passos anteriores
 
     ![img/sendtoqueue01.png](img/sendtoqueue01.png)
 
-3. Execute os comandos abaixo para garantir que esta em um ambiente virtual do python com as dependencias necessárias para executar o execício:
+4. Execute os comandos abaixo para garantir que esta em um ambiente virtual do python com as dependencias necessárias para executar o execício:
 
    ``` shell
    pip3 install virtualenv && python3 -m venv ~/venv
@@ -28,7 +28,7 @@
    pip3 install boto3
    ```
 
-4. Execute o comando `python3 put.py` no terminal para colocar 3000 mensagens na fila. Verifique no [console](https://us-east-1.console.aws.amazon.com/sqs/v3/home?region=us-east-1#/queues) o resultado do comando.
+5. Execute o comando `python3 put.py` no terminal para colocar 3000 mensagens na fila. Verifique no [console](https://us-east-1.console.aws.amazon.com/sqs/v3/home?region=us-east-1#/queues) o resultado do comando.
 ![alt](img/sendtoqueue02.png)
 
 ### Consumindo SQS
