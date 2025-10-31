@@ -1,0 +1,14 @@
+{
+  "type": "object",
+  "properties": {
+    "id_cliente": { "type": "string" },
+    "descricao": { "type": "string" },
+    "categoria": {
+      "type": "string",
+      "enum": ["elogio", "reclamação", "sugestão"]
+    },
+    "data_hora": { "type": "string", "format": "date-time" }
+  },
+  "required": ["id_cliente", "descricao", "categoria", "data_hora"],
+  "additionalProperties": false
+}

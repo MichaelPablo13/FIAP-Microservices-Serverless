@@ -1,0 +1,29 @@
+service: feedback-api
+
+provider:
+  name: aws
+  runtime: python3.11
+  memorySize: 128
+  region: us-east-1
+  iam:
+    role: !Sub arn:aws:iam::839562665183:role/LabRole
+  environment:
+    sqs_url: !Sub https://sqs.us-east-1.amazonaws.com/839562665183/feedback-queue
+
+functions:
+  handler_processamento:
+    handler: handler_processamento.handler
+    events:
+      - sqs:
+          arn: arn:aws:sqs:us-east-1:839562665183:FeedbacksReclamacoesQueue
+          batchSize: 1
+          enabled: true
+  handler_recebimento:
+    handler: handler_recebimento.handler
+    events:
+      - http:
+          path: feedback
+          method: post
+          request:
+            schemas:
+              application/json: ${file(create_request.json)}
