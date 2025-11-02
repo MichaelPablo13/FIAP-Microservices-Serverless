@@ -34,7 +34,7 @@ Execute os passos abaixo no inicio de cada aula:
 6. Após isso, vamos atualizar as credenciais do AWS CLI. Execute o comando abaixo para atualizar as credenciais:
    
    ```bash
-   code ~/.aws/credentials
+code ~/.aws/credentials   code ~/.aws/credentials
    ```
 7. Após isso, clique no arquivo `credentials` que abrirá e cole as credenciais que estão na sua conta do AWS Academy. Para isso, acesse o o [AWS Academy](https://www.awsacademy.com/vforcesite/LMS_Login) e clique em `AWS Academy Learner Lab` para acessar a conta AWS Academy no laboratório que o professor informou.
 
