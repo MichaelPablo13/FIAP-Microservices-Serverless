@@ -1,19 +1,14 @@
 import boto3
 # import uuid
 import json
+from botocore.exceptions import ClientError
 
 dynamodb = boto3.resource('dynamodb')
 table = dynamodb.Table('FeedbacksReclamacoes')
 
 def inserir_feedback(id_cliente, descricao, categoria, data_hora):
+    response = None
     try:
-        print({
-                'id_cliente': id_cliente,
-                'descricao': descricao,
-                'categoria': categoria,
-                'data_hora': data_hora
-            })
-            
         response = table.put_item(
             Item={
                 'id_cliente': id_cliente,
@@ -32,6 +27,7 @@ def inserir_feedback(id_cliente, descricao, categoria, data_hora):
 def handler(event, context):
     print(json.dumps(event))
     print(event["Records"][0]["body"])
+    response_dynamo = None
     for record in event["Records"]:
         body = json.loads(record["body"])
         response_dynamo = inserir_feedback(body["id_cliente"], body["descricao"], body["categoria"], body["data_hora"])
