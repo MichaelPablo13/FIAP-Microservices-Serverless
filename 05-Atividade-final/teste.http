@@ -1,0 +1,9 @@
+POST https://a31ryb8417.execute-api.us-east-1.amazonaws.com/dev/feedback
+Content-Type: application/json
+
+{
+  "id_cliente": "111235567122890",
+  "descricao": "Gostei muito do atendimento rápido e eficiente!",
+  "categoria": "Comentario",
+  "data_hora": "2024-07-29T15:00:00Z"
+}
