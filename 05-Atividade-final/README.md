@@ -174,5 +174,16 @@ def inserir_feedback(id_cliente, descricao, categoria, data_hora):
 1. Monte um zip com:
      1. Serverless.yml e arquivos em python (ou outra linguagem nativamente suportada pelo Lambda) das funções Lambda.
      2. Print da tabela do DynamoDB com os dados inseridos.
-     3. Print da fila SQS com as mensagens processadas.
+
+      
+     ![](img/Dynamo_results_final.png)
+
+
+     3. Print da fila SQS com as mensagens processadas. 
+     
+     
+     ![](img/Monitoracao_SQS.png)
+
+
+     ![](img/Monitoracao_SQS_2.png)
 2. Suba o zip no portal da FIAP.
